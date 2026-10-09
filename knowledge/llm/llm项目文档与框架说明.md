@@ -13,7 +13,7 @@ AIGC:
 
 # LLM 项目文档与框架说明
 
-> 项目路径：`E:\itcast\05-toumanfen\03all_code\000code\llm`
+> 项目路径：`knowledge/llm`（仓库内相对路径）
 > 文档生成日期：2026-08-16
 > 项目类型：基于 LlamaIndex + Chroma 的本地知识库 RAG（检索增强生成）问答系统
 

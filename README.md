@@ -2,7 +2,7 @@
 
 面向小麦田间管理的智能辅助决策系统：上传田间照片识别 15 类病虫害，输入环境 / 土壤 / 农事数据给出长势评分与干预建议，并提供天气风险提示、历史记录与统计。
 
-> 本项目为个人视图模型练习项目：各模块分别交付（接口契约中对应统筹、数据处理、ResNet50、ConvNeXt、后端、前端、知识库、数据库 / 天气）。统一接口契约见 [`docs/接口契约.md`](docs/接口契约.md)。
+> 本项目为个人视觉模型练习项目：各模块分别交付（接口契约中对应统筹、数据处理、ResNet50、ConvNeXt、后端、前端、知识库、数据库 / 天气）。统一接口契约见 [`docs/接口契约.md`](docs/接口契约.md)。
 
 ## 功能概览
 
@@ -132,7 +132,7 @@ python build_delivery.py
 | 13 | Tan spot | 小麦褐斑病 |
 | 14 | Yellow Rust | 小麦条锈病 |
 
-> ⚠️ [`docs/接口契约.md`](docs/接口契约.md) 正文中的 JSON 示例使用的是**早期版本的类别编号与英文名**（例如示例写 `Yellow Rust` 为 `class_id: 13`、写 `Powdery Mildew` 而代码中为 `Mildew`）。对接时请以上表和 `backend/config.py` 为准。
+> 注：[`docs/接口契约.md`](docs/接口契约.md) 中的类别示例已与上表及 `backend/config.py` 的 `CLASS_NAMES` / `CLASS_MAPPING` 对齐（数组索引即 `class_id`）。
 
 ## 目录结构
 
@@ -185,7 +185,7 @@ wheat-disease-monitor/
 ## 数据来源说明
 
 - 图像数据整理自公开学术数据集（小麦病虫害图像分类）并做了类别合并与增强，图片本身不随仓库分发。
-- `database/manifest.csv` 的 `source` / `destination` 两列保留了数据整理过程的本机绝对路径，用于溯源；如需对外分享可自行替换为相对路径。
+- `database/manifest.csv` 与 `database/manifest_augmented.csv` 的 `source` / `destination` 两列已改为占位根目录 `{DATA_ROOT}` 加相对路径，不含本机绝对路径；使用时按本机数据根目录替换占位符即可。
 - 天气样例数据与合作方接口均为课程项目内的模拟实现，不代表任何真实业务系统。
 
 ## 交付物对照
